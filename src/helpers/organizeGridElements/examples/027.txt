@@ -1,0 +1,8 @@
+starting:
+123456|
+
+selected:
+    6 |
+
+result:
+123465|

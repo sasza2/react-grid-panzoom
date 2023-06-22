@@ -1,0 +1,28 @@
+rows: auto
+removeEmptySpaceBelow: true
+starting:
+    |
+ 222|
+    |
+ 33 |
+    |
+44  |
+    |
+
+selected:
+    |
+    |
+    |
+    |
+ 33 |
+    |
+    |
+
+result:
+    |
+ 222|
+    |
+    |
+ 33 |
+44  |
+    |

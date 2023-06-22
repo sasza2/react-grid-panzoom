@@ -1,0 +1,8 @@
+starting:
+123456|
+
+selected:
+ 1    |
+
+result:
+213456|

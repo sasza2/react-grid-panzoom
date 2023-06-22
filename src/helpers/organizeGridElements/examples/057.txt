@@ -1,0 +1,11 @@
+starting:
+122 |
+ 22 |
+
+selected:
+    |
+   1|
+
+result:
+ 22 |
+ 221|

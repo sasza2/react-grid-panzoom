@@ -1,0 +1,27 @@
+rows: auto
+removeEmptySpaceBelow: true
+starting:
+         |
+ xxx     |
+ xxx     |
+ aaa     |
+ yy   11 |
+         |
+
+selected:
+         |
+         |
+         |
+         |
+         |
+ xxx     |
+ xxx     |
+
+result:
+         |
+ aaa     |
+ yy      |
+         |
+      11 |
+ xxx     |
+ xxx     |

@@ -1,0 +1,25 @@
+rows: auto
+removeEmptySpaceBelow: true
+starting:
+  22222  |
+ 111  333|
+ 111  333|
+         |
+         |
+         |
+
+selected:
+         |
+         |
+         |
+22222    |
+         |
+         |
+
+result:
+ 111  333|
+ 111  333|
+         |
+22222    |
+         |
+         |

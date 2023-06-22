@@ -1,0 +1,28 @@
+rows: auto
+removeEmptySpaceBelow: true
+starting:
+  A |
+ X  |
+ X  |
+YYY |
+    |
+BB  |
+    |
+
+selected:
+    |
+    |
+    |
+    |
+   X|
+   X|
+    |
+
+result:
+  A |
+YYY |
+    |
+    |
+   X|
+BB X|
+    |

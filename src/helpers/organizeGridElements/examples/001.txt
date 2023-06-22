@@ -1,0 +1,11 @@
+starting:
+###     |
+  X     |
+
+selected:
+        |
+###     |
+
+result:
+  X     |
+###     |

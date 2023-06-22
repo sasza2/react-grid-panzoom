@@ -1,0 +1,16 @@
+rows: auto
+removeEmptySpaceBelow: true
+starting:
+1   5|
+ 2 4 |
+  3  |
+
+selected:
+     |
+     |
+    5|
+
+result:
+1    |
+ 2 4 |
+  3 5|

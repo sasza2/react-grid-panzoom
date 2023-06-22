@@ -1,0 +1,26 @@
+starting:
+A     |
+A B   |
+  B   |
+   XXX|
+   XXX|
+   XXX|
+      |
+
+selected:
+      |
+XXX   |
+XXX   |
+XXX   |
+      |
+      |
+      |
+
+result:
+      |
+XXX   |
+XXX   |
+XXX   |
+A B   |
+A B   |
+      |

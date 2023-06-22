@@ -1,0 +1,26 @@
+starting:
+1234  |
+567   |
+8 9   |
+XXX   |
+XXX   |
+XXX   |
+      |
+
+selected:
+XXX   |
+XXX   |
+XXX   |
+      |
+      |
+      |
+      |
+
+result:
+XXX4  |
+XXX   |
+XXX   |
+123   |
+567   |
+8 9   |
+      |

@@ -1,0 +1,11 @@
+starting:
+      |
+ 1 22 |
+
+selected:
+      |
+22222 |
+
+result:
+ 1    |
+22222 |

@@ -1,0 +1,11 @@
+starting:
+1223|
+ 224|
+
+selected:
+    |
+   1|
+
+result:
+ 223|
+4221|

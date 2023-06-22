@@ -1,0 +1,23 @@
+starting:
+A   |
+ABD |
+AC  |
+AC  |
+A   |
+A   |
+
+selected:
+    |
+    |
+ D  |
+    |
+    |
+    |
+
+result:
+A   |
+AB  |
+AD  |
+AC  |
+AC  |
+A   |

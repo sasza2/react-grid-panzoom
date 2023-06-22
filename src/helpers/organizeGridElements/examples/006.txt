@@ -1,0 +1,8 @@
+starting:
+111X  |
+
+selected:
+ 111  |
+
+result:
+ 111X |

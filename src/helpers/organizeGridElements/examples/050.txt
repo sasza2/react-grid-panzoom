@@ -1,0 +1,8 @@
+starting:
+11 2  |
+
+selected:
+1111  |
+
+result:
+11112 |

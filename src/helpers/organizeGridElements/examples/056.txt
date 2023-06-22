@@ -1,0 +1,31 @@
+rows: auto
+removeEmptySpaceBelow: true
+starting:
+  666|
+77666|
+ 22 5|
+    5|
+ 33 5|
+    5|
+44  5|
+     |
+
+selected:
+     |
+     |
+     |
+     |
+     |
+77   |
+     |
+     |
+
+result:
+  666|
+  666|
+ 22 5|
+ 33 5|
+    5|
+77  5|
+44  5|
+     |

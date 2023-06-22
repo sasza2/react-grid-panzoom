@@ -1,0 +1,23 @@
+starting:
+       |
+ xxx   |
+       |
+       |
+ yy    |
+       |
+                     
+selected:
+       |
+       |
+       |
+       |
+ xxx   |
+       |
+
+result:
+       |
+       |
+       |
+ yy    |
+ xxx   |
+       |
