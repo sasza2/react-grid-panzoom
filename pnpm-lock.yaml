@@ -1,9 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@sasza/react-panzoom':
-    specifier: 1.11.1
-    version: 1.11.1(react@18.2.0)
+    specifier: 1.11.2
+    version: 1.11.2(react@18.2.0)
 
 devDependencies:
   '@ladle/react':
@@ -925,12 +929,12 @@ packages:
     dev: true
     optional: true
 
-  /@sasza/react-panzoom@1.11.1(react@18.2.0):
-    resolution: {integrity: sha512-RdGF0EFkf9VXOJSZExI8ndBxbCSnJnI1gNqgzMwtjLfeNPsj3L0w0DqZmqR3vh5zMMprLnb8KbQpweMe2a64Qw==}
+  /@sasza/react-panzoom@1.11.2(react@18.2.0):
+    resolution: {integrity: sha512-Qh5GW8uOQiHUnj82uFWD0OnWlXPMwCXRbLvq+4RkxGhjZ35m64G4vZ12GbNgLxWxX2y7WoA/VnbOYzrHoEceqw==}
     peerDependencies:
       react: '>=16.14.0'
     dependencies:
-      panzoom-core: 1.4.1
+      panzoom-core: 1.4.2
       react: 18.2.0
     dev: false
 
@@ -4886,8 +4890,8 @@ packages:
       p-limit: 3.1.0
     dev: true
 
-  /panzoom-core@1.4.1:
-    resolution: {integrity: sha512-10JjXb7USRViidelmDK5tjCqZ5NmDO56x8BROKBfbxP/gbtdcF2X58VsloZRsI6Kmk/xrXfJSsVyQmHzXMPzxQ==}
+  /panzoom-core@1.4.2:
+    resolution: {integrity: sha512-2j+g3aw7YH1FzosB2gkmmbzU4ylf66GVrZPxtnfDR3bAOZ7ZGrSvX2PRQ6BzRp3L7nxajqXHkarXgSTiP1yXaQ==}
     dev: false
 
   /parent-module@1.0.1:
