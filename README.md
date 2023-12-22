@@ -4,9 +4,9 @@ React component for grid layout with pan and zoom.
 !["Preview"](https://raw.githubusercontent.com/sasza2/react-grid-panzoom/master/docs/preview.gif "Example preview")
 
 # Demo
-https://codesandbox.io/p/sandbox/hardcore-leavitt-mv3wrg
-https://codesandbox.io/p/sandbox/xenodochial-ride-l2jc5h
-https://codesandbox.io/p/sandbox/stupefied-euclid-xwkjl8
+https://codesandbox.io/p/sandbox/hardcore-leavitt-mv3wrg<br />
+https://codesandbox.io/p/sandbox/xenodochial-ride-l2jc5h<br />
+https://codesandbox.io/p/sandbox/stupefied-euclid-xwkjl8<br />
 <br />
 
 # Installation
