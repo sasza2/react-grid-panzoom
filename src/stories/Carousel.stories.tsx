@@ -36,6 +36,7 @@ const createCarousel: CreateCarousel = ({
           render: () => <Element id={index + 1} />,
           x: index * addX,
           y: index * addY,
+          resizable: false,
         }) as GridElement),
     );
 

@@ -3,8 +3,9 @@
 /src
 .babelrc
 .eslintrc
-jest.config.js
-package-lock.json
+.github
+pnpm-lock.json
+test.setup.js
 tsconfig.eslint.json
 tsconfig.json
-webpack.config.js
+vite.config.js
