@@ -63,7 +63,7 @@ const useOrganizeElements = () => {
       return;
     }
 
-    setElements(nextElements, { type: 'user' });
+    setElements(nextElements, { type: 'programmatic' });
 
     hasCollision.current = false;
   }, [cols, colWidth, elements, gapHorizontal, gapVertical, paddingLeft, rows, rowHeight]);
