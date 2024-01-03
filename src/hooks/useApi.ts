@@ -31,6 +31,13 @@ const useApi = () => {
         if (!element) return null;
         return measureElementHeight(element);
       },
+      measureElementsHeight: (): Record<string | number, number> => {
+        const elementsHeight: Record<string | number, number> = {};
+        elements.forEach((element) => {
+          elementsHeight[element.id] = measureElementHeight(element);
+        });
+        return elementsHeight;
+      },
       organizeElements,
       getElementsPaddingBottom: () => {
         const zoom = panZoomRef.current.getZoom();

@@ -31,6 +31,7 @@ export type GridAPI = {
   getPanZoom: () => PanZoomAPI,
   grabElement: (elementId: string | number, position?: Position) => void;
   measureElementHeight: (elementId: string | number) => number | null;
+  measureElementsHeight: () => Record<string | number, number>;
   getElementsPaddingBottom: () => Record<string | number, number>;
   organizeElements: (selectedElements?: GridElement[]) => void,
 }
