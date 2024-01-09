@@ -1,10 +1,11 @@
 import { GridElement, MeasureElementHeight } from 'types';
 import { getFirstSelectedElement } from './getFirstSelectedElement';
-import { getSelectedElementOriginal } from './getSelectedElementOriginal';
+import { getFirstSelectedElementOriginal } from './getFirstSelectedElementOriginal';
 import { hasAnyCollisions } from './hasAnyCollisions';
 import { ElementWrapped } from './types';
 import { areElementsOnSameVerticalLine } from './areElementsOnSameVerticalLine';
 import { isTryingToMoveAboveLowest } from './isTryingToMoveAboveLowest';
+import { getSelectedElementsOriginal } from './getSelectedElementsOriginal';
 
 export const createVerticalMovement = ({
   internalRows,
@@ -22,7 +23,8 @@ export const createVerticalMovement = ({
   startingElements: GridElement[],
 }) => {
   const firstSelectedElement = getFirstSelectedElement(selectedElements);
-  const selectedElementOriginal = getSelectedElementOriginal(selectedElements, startingElements);
+  const selectedElementsOriginal = getSelectedElementsOriginal(selectedElements, startingElements);
+  const selectedElementOriginal = getFirstSelectedElementOriginal(selectedElements, startingElements);
 
   const yPositionsOfElementsAbove = new Map<number, GridElement[]>();
   const yPositionsOfElementsBelow = new Map<string | number, number>();
@@ -39,7 +41,7 @@ export const createVerticalMovement = ({
   const lowestYOfMovedElement = -1;
 
   const tryToMoveAboveFirstSelected = (element: GridElement): number | null => {
-    if (!areElementsOnSameVerticalLine(element, selectedElementOriginal)) {
+    if (!areElementsOnSameVerticalLine([element], selectedElementsOriginal)) {
       return null;
     }
 

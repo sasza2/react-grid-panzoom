@@ -5,7 +5,7 @@ import { createHorizontalMovement } from './createHorizontalMovement';
 import { createMap } from './createMap';
 import { createVerticalMovement } from './createVerticalMovement';
 import { getFirstSelectedElement } from './getFirstSelectedElement';
-import { getSelectedElementOriginal } from './getSelectedElementOriginal';
+import { getFirstSelectedElementOriginal } from './getFirstSelectedElementOriginal';
 import { hasAnyCollisions } from './hasAnyCollisions';
 import { sortElementsByY } from './sortElementsByY';
 import { startingElementsWithoutSelected } from './startingElementsWithoutSelected';
@@ -23,7 +23,7 @@ const createOrganizer: CreateOrganizeGridElements = ({ removeEmptySpaceBelow }) 
   selectedElements,
 }) => {
   const firstSelectedElement = getFirstSelectedElement(selectedElements);
-  const selectedElementOriginal = getSelectedElementOriginal(selectedElements, startingElements);
+  const selectedElementOriginal = getFirstSelectedElementOriginal(selectedElements, startingElements);
   const map = createMap(selectedElements, measureElementHeight);
   const internalRows = getInternalRows({
     elements: startingElements,

@@ -13,7 +13,8 @@ export const isTryingToMoveAboveLowest = (
     if (y > element.y) return;
 
     elements.forEach((item) => {
-      if (y < element.y && areElementsOnSameVerticalLine(element, item)) elementsAbove.push(item);
+      if (y >= element.y) return;
+      if (areElementsOnSameVerticalLine([element], [item])) elementsAbove.push(item);
     });
   });
 
