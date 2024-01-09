@@ -16,6 +16,11 @@
     "import/prefer-default-export": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-static-element-interactions": 0,
+    "max-len": ["error", {
+      "code": 105,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
     "no-continue": 0,
     "no-param-reassign": 0,
     "no-plusplus": 0,

@@ -1,13 +1,32 @@
 import { GridElement } from 'types';
 
+const getMinX = (elements: GridElement[]): number => {
+  const numbers = elements.map((element) => element.x);
+  return Math.min(...numbers);
+};
+
+const getMaxX = (elements: GridElement[]): number => {
+  const numbers = [...elements.map((element) => element.x + element.w)];
+  return Math.max(...numbers);
+};
+
+const getRange = (elements: GridElement[]): [number, number] => {
+  const minX = getMinX(elements);
+  const maxX = getMaxX(elements);
+  return [minX, maxX];
+};
+
 export const areElementsOnSameVerticalLine = (
-  elementA: GridElement,
-  elementB: GridElement,
+  elementsA: GridElement[],
+  elementsB: GridElement[],
 ): boolean => {
   const tab: Record<number, number> = {};
-  for (let { x } = elementA; x < elementA.x + elementA.w; x++) tab[x] = 1;
 
-  for (let { x } = elementB; x < elementB.x + elementB.w; x++) {
+  const [minXA, maxXA] = getRange(elementsA);
+  for (let x = minXA; x < maxXA; x++) tab[x] = 1;
+
+  const [minXB, maxXB] = getRange(elementsB);
+  for (let x = minXB; x < maxXB; x++) {
     if (tab[x]) return true;
   }
 

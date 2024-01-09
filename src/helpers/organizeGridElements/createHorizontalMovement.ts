@@ -1,6 +1,6 @@
 import { GridElement, MeasureElementHeight } from 'types';
 import { getFirstSelectedElement } from './getFirstSelectedElement';
-import { getSelectedElementOriginal } from './getSelectedElementOriginal';
+import { getFirstSelectedElementOriginal } from './getFirstSelectedElementOriginal';
 import { hasAnyCollisions } from './hasAnyCollisions';
 import { ElementWrapped } from './types';
 
@@ -18,7 +18,7 @@ export const createHorizontalMovement = ({
   startingElements: GridElement[],
 }) => {
   const firstSelectedElement = getFirstSelectedElement(selectedElements);
-  const selectedElementOriginal = getSelectedElementOriginal(selectedElements, startingElements);
+  const selectedElementOriginal = getFirstSelectedElementOriginal(selectedElements, startingElements);
 
   const tryToMoveLeft = (element: GridElement): number | null => {
     for (let { x } = element; x >= 0; x--) {
