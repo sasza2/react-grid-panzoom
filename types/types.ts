@@ -67,6 +67,7 @@ export type GridProps = PropsWithChildren<{
   gapVertical?: number,
   onContainerChange?: PanZoomOptions['onContainerChange'],
   onContainerContextMenu?: PanZoomOptions['onContextMenu'],
+  onElementStartResizing?: ElementOptions['onStartResizing'],
   onElementClick?: (element: GridElement) => void,
   onElementContextMenu?: ElementOptions['onContextMenu'],
   onElementsMeasureUpdate?: (elementsHeight: Record<number | string, number>) => void,

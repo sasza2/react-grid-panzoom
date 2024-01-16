@@ -44,6 +44,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
     onContainerContextMenu,
     onContainerChange,
     onElementContextMenu,
+    onElementStartResizing,
     paddingLeft,
     panZoomRef,
     selectedElements,
@@ -68,6 +69,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const onAfterResize = useOnAfterResize();
   const onAfterResizeMemo = useMemoRef(onAfterResize);
+  const onElementStartResizingMemo = useMemoRef(onElementStartResizing);
 
   const onElementMouseUp = useOnElementMouseUp();
   const onElementMouseUpMemo = useMemoRef(onElementMouseUp);
@@ -154,6 +156,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
               onClick={onClickMemo}
               onContextMenu={onElementContextMenuMemo}
               onMouseUp={onElementMouseUpMemo}
+              onStartResizing={onElementStartResizingMemo}
               disabled={element.disabled}
               fullHeight={element.fullHeight}
               {...elementProps}

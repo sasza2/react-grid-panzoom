@@ -26,6 +26,7 @@ const useOnAfterResize = () => {
     rows,
     rowHeight,
     setElements,
+    setSelectedElements,
   } = useGrid();
 
   const calculateCellPositionByPixels = useCalculateCellPositionByPixels();
@@ -34,6 +35,7 @@ const useOnAfterResize = () => {
   const onAfterResize: ElementProps['onAfterResize'] = useCallback(({ id }) => {
     const panZoomElementsRef = panZoomRef.current.getElements();
     const zoom = panZoomRef.current.getZoom();
+    const { node: elementNode } = panZoomElementsRef[id];
 
     const startingElements = elements.map((originalElement) => {
       if (originalElement.id !== id) return originalElement;
@@ -61,9 +63,8 @@ const useOnAfterResize = () => {
     const selectedElement = getElementById(startingElements, id);
 
     const updateElement = (element: GridElement) => {
-      const { node } = panZoomElementsRef[id];
-
-      node.current.style.width = isLengthAuto(colWidth)
+      elementNode.current.style.transition = '0.3s all';
+      elementNode.current.style.width = isLengthAuto(colWidth)
         ? undefined
         : `${colWidth * element.w + gapHorizontal * (element.w - 1)}px`;
 
@@ -71,6 +72,9 @@ const useOnAfterResize = () => {
         gapHorizontal, gapVertical, paddingLeft, colWidth, rowHeight,
       }));
     };
+
+    elementNode.current.style.transition = 'none';
+    elementsHeightRef.current = {};
 
     const nextElements = organizeGridElements({
       startingElements,
@@ -88,7 +92,7 @@ const useOnAfterResize = () => {
 
     updateElement(selectedElement);
     setElements(nextElements, { type: 'user' });
-
+    setSelectedElements([]);
     elementsHeightRef.current = {};
   }, [cols, colWidth, elements, gapHorizontal, gapVertical, paddingLeft, rows, rowHeight]);
 

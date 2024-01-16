@@ -22,6 +22,8 @@ const useGrabElement = () => {
     const onPointerMove = (e: PointerEvent) => {
       if (e.buttons) return;
 
+      setSelectedElements([]);
+
       window.removeEventListener('pointermove', onPointerMove, true);
 
       target.style.transition = '0.3s all';

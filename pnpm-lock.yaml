@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@sasza/react-panzoom':
-    specifier: 1.11.4
-    version: 1.11.4(react@18.2.0)
+    specifier: 1.12.0
+    version: 1.12.0(react@18.2.0)
 
 devDependencies:
   '@ladle/react':
@@ -929,8 +929,8 @@ packages:
     dev: true
     optional: true
 
-  /@sasza/react-panzoom@1.11.4(react@18.2.0):
-    resolution: {integrity: sha512-s+fEOiOeDBNL8lL25j/LIoSarSB3uJGeyRjZo/MiIAyyuUe5opUUHYbE/IiltDxNVybJSHsB6niS2bmh8e/ZEg==}
+  /@sasza/react-panzoom@1.12.0(react@18.2.0):
+    resolution: {integrity: sha512-57BX8LAfBfdXnUFoDVokOy+iVV3VjReVp7x+v55WW1ByasMK4zx2r32NQJcSX4zbq23Qa2F4XJhAstZjNSap4w==}
     peerDependencies:
       react: '>=16.14.0'
     dependencies:

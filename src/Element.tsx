@@ -16,6 +16,7 @@ type ElementWrapperProps = {
   elementsNodes: Record<string | number, HTMLDivElement>,
   elementResizerWidth?: number,
   rowHeight: Pixels,
+  onStartResizing?: ElementProps['onStartResizing'],
   onAfterResize?: ElementProps['onAfterResize'],
   onClick?: ElementProps['onClick'],
   onContextMenu?: ElementProps['onContextMenu'],
@@ -38,6 +39,7 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
   elementResizerWidth,
   fullHeight = true,
   rowHeight,
+  onStartResizing,
   onAfterResize,
   onClick,
   onContextMenu,
@@ -113,6 +115,7 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
       family={element.family}
       x={x}
       y={y}
+      onStartResizing={onStartResizing}
       onAfterResize={onAfterResize}
       onClick={disabled ? undefined : onClick}
       onContextMenu={disabled ? undefined : onContextMenu}
@@ -129,6 +132,7 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
         <div style={{ pointerEvents: 'none', height: fullHeight ? '100%' : undefined }}>
           <LinesContainer />
           {renderElement}
+          <div className="react-grid-panzoom-element-selection" />
         </div>
       </div>
     </Element>

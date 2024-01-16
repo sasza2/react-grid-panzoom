@@ -6,32 +6,37 @@ const Styles = () => (
   <Style>
     {`
       @keyframes react-panzoom-element-animation {
-        0% { outline: solid 2px rgba(0, 0, 0, 0.05); }
-        50% { outline: solid 2px rgba(0, 0, 0, 0.15); }
-        100% { outline: solid 2px rgba(0, 0, 0, 0.05); }
+        0% { outline: solid 4px rgba(0, 0, 0, 0.05); }
+        50% { outline: solid 4px rgba(0, 0, 0, 0.15); }
+        100% { outline: solid 4px rgba(0, 0, 0, 0.05); }
       }
-      .react-panzoom--element-moving .react-panzoom-element:not(.react-panzoom-element--disabled) {
+      .react-grid-panzoom .react-panzoom__in {
+        overflow: visible !important;
+      }
+      .react-panzoom--element-moving .react-panzoom-element:not(.react-panzoom-element--disabled) .react-grid-panzoom-element-selection {
         outline-offset: -2px;
-        outline: solid 2px rgba(0, 0, 0, 0.1);
+        outline: solid 4px rgba(0, 0, 0, 0.1);
       }
       .react-panzoom--element-moving .react-panzoom-element-is-shadow {
         z-index: 1;
+      }
+      .react-panzoom--element-moving .react-panzoom-element-is-shadow .react-grid-panzoom-element-selection {
         outline: none;
       }
-      .react-grid-panzoom .react-panzoom-element:hover {
+      .react-grid-panzoom .react-panzoom-element:hover .react-grid-panzoom-element-selection {
         outline-offset: -2px;
         animation: react-panzoom-element-animation 1s infinite;
       }
-      .react-grid-panzoom .react-panzoom--element-moving .react-panzoom-element,
-      .react-grid-panzoom .react-panzoom--element-resizing .react-panzoom-element,
-      .react-grid-panzoom .react-panzoom--element-moving .react-panzoom-element:hover,
-      .react-grid-panzoom .react-panzoom--element-resizing .react-panzoom-element:hover {
+      .react-grid-panzoom .react-panzoom--element-moving .react-panzoom-element .react-grid-panzoom-element-selection,
+      .react-grid-panzoom .react-panzoom--element-resizing .react-panzoom-element .react-grid-panzoom-element-selection,
+      .react-grid-panzoom .react-panzoom--element-moving .react-panzoom-element:hover .react-grid-panzoom-element-selection,
+      .react-grid-panzoom .react-panzoom--element-resizing .react-panzoom-element:hover .react-grid-panzoom-element-selection {
         outline-offset: -1px;
-        outline: solid 1px rgba(0, 0, 0, 0.1);
+        outline: solid 2px rgba(0, 0, 0, 0.1);
         animation: none;
       }
-      .react-grid-panzoom .react-panzoom--element-moving .react-panzoom-element.react-panzoom-element--disabled,
-      .react-grid-panzoom .react-panzoom--element-resizing .react-panzoom-element.react-panzoom-element--disabled {
+      .react-grid-panzoom .react-panzoom--element-moving .react-panzoom-element.react-panzoom-element--disabled .react-grid-panzoom-element-selection,
+      .react-grid-panzoom .react-panzoom--element-resizing .react-panzoom-element.react-panzoom-element--disabled .react-grid-panzoom-element-selection {
         outline: none;
       }
       .react-grid-panzoom .react-panzoom-element {
@@ -52,6 +57,14 @@ const Styles = () => (
       }
       .react-grid-panzoom-lines-container .react-grid-panzoom-line--left {
         text-align: right;
+      }
+      .react-grid-panzoom-element-selection {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
       }
     `}
   </Style>
