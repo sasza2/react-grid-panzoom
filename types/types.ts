@@ -68,7 +68,7 @@ export type GridProps = PropsWithChildren<{
   onContainerChange?: PanZoomOptions['onContainerChange'],
   onContainerContextMenu?: PanZoomOptions['onContextMenu'],
   onElementStartResizing?: ElementOptions['onStartResizing'],
-  onElementClick?: (element: GridElement) => void,
+  onElementClick?: (element: GridElement, { e, stop }: { e: MouseEvent, stop: () => void }) => void,
   onElementContextMenu?: ElementOptions['onContextMenu'],
   onElementsMeasureUpdate?: (elementsHeight: Record<number | string, number>) => void,
   organizeGridElements?: OrganizeGridElements,

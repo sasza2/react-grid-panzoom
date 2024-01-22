@@ -11,15 +11,32 @@ const useOnClick = () => {
   const onElementClickRef = useRef<typeof onElementClick>();
   onElementClickRef.current = onElementClick;
 
-  const onClick: ElementProps['onClick'] = useCallback(({ e, id, family }) => {
+  const onClick: ElementProps['onClick'] = useCallback(({
+    e, id, family, stop,
+  }) => {
     e.preventDefault();
     e.stopPropagation();
 
-    grabElement(id, family);
+    let isStopped = false;
+
+    const onGridStop = () => {
+      isStopped = true;
+      stop();
+    };
 
     if (onElementClickRef.current) {
-      onElementClickRef.current(elements.find((element) => element.id === id));
+      onElementClickRef.current(
+        elements.find((element) => element.id === id),
+        {
+          e,
+          stop: onGridStop,
+        },
+      );
     }
+
+    if (isStopped) return;
+
+    grabElement(id, family);
   }, [grabElement]);
 
   return onClick;
