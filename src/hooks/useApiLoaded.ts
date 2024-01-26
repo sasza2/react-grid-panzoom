@@ -7,10 +7,20 @@ const useApiLoaded = () => {
   const [apiLoaded, setApiLoaded] = useState(false);
 
   useEffect(() => {
-    if (apiLoaded || !panZoomRef.current) return;
+    if (apiLoaded) return;
 
-    setApiLoaded(true);
-  }, [apiLoaded, panZoomRef.current]);
+    const checkAPI = () => {
+      if (panZoomRef.current) setApiLoaded(true);
+    }
+
+    checkAPI()
+
+    const waitForAPI = setInterval(checkAPI, 10)
+
+    return () => {
+      clearInterval(waitForAPI)
+    }
+  }, [apiLoaded]);
 
   return apiLoaded;
 };
