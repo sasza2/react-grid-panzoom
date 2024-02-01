@@ -6,11 +6,11 @@ import { useGrid } from './useGrid';
 
 const useGrabElement = () => {
   const {
-    currentElements, elementRef, elements, setSelectedElements,
+    currentElements, elementRef, elements, gridRef, setSelectedElements,
   } = useGrid();
 
   const grabElement = useCallback((id: string | number, family?: string) => {
-    const target: HTMLDivElement = document.querySelector(`.react-panzoom-element--id-${id}`);
+    const target: HTMLDivElement = gridRef.current?.querySelector(`.react-panzoom-element--id-${id}`);
     if (!target) return;
 
     currentElements.current = copyElements(elements);
