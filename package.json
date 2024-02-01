@@ -1,6 +1,6 @@
 {
   "name": "react-grid-panzoom",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "React grid component for pan and zoom with possibility to moving and selecting elements inside",
   "keywords": [
     "react",
