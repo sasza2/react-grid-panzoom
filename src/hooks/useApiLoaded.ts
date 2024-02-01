@@ -11,15 +11,15 @@ const useApiLoaded = () => {
 
     const checkAPI = () => {
       if (panZoomRef.current) setApiLoaded(true);
-    }
+    };
 
-    checkAPI()
+    checkAPI();
 
-    const waitForAPI = setInterval(checkAPI, 10)
+    const waitForAPI = setInterval(checkAPI, 10);
 
     return () => {
-      clearInterval(waitForAPI)
-    }
+      clearInterval(waitForAPI);
+    };
   }, [apiLoaded]);
 
   return apiLoaded;
