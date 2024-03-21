@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.5.0
+
+### Minor Changes
+
+- e2a1f53: zoom position feature
+
 ## 1.4.2
 
 ### Patch Changes
