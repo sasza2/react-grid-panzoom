@@ -48,6 +48,11 @@ export type OrganizeGridElementsProps = {
 
 export type OrganizeGridElements = (props: OrganizeGridElementsProps) => GridElement[]
 
+export type ZoomPosition = {
+  x?: number | 'center',
+  y?: number | 'center',
+}
+
 export type GridProps = PropsWithChildren<{
   autoOrganizeElements?: boolean,
   boundary?: boolean,
@@ -79,5 +84,6 @@ export type GridProps = PropsWithChildren<{
   zoomInitial?: number;
   zoomMax?: number;
   zoomMin?: number;
+  zoomPosition?: ZoomPosition;
   zoomSpeed?: number;
 }>
