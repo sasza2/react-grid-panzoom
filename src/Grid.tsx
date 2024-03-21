@@ -52,6 +52,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
     zoomInitial,
     zoomMax,
     zoomMin,
+    zoomPosition,
     zoomSpeed,
   } = useGrid();
   const height = useGridHeight();
@@ -114,6 +115,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
         zoomInitial={zoomInitial}
         zoomMax={zoomMax}
         zoomMin={zoomMin}
+        zoomPosition={zoomPosition}
         zoomSpeed={zoomSpeed}
       >
         {children && (
