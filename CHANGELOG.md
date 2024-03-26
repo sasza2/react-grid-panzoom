@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.6.0
+
+### Minor Changes
+
+- 2412276: element new disabledMove property
+
 ## 1.5.0
 
 ### Minor Changes
