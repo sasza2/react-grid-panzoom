@@ -160,6 +160,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
               onMouseUp={onElementMouseUpMemo}
               onStartResizing={onElementStartResizingMemo}
               disabled={element.disabled}
+              disabledMove={element.disabledMove}
               fullHeight={element.fullHeight}
               {...elementProps}
             />

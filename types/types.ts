@@ -14,6 +14,7 @@ export type GridElement = {
   render: RenderElement,
   resizable?: boolean,
   disabled?: boolean,
+  disabledMove?: boolean,
   draggableSelector?: string,
 }
 
@@ -84,6 +85,6 @@ export type GridProps = PropsWithChildren<{
   zoomInitial?: number;
   zoomMax?: number;
   zoomMin?: number;
-  zoomPosition?: ZoomPosition;
+  zoomPosition?: ZoomPosition | null;
   zoomSpeed?: number;
 }>
