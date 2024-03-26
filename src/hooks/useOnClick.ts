@@ -14,6 +14,9 @@ const useOnClick = () => {
   const onClick: ElementProps['onClick'] = useCallback(({
     e, id, family, stop,
   }) => {
+    const element = elements.find((element) => element.id === id);
+    if (!element || element.disabled) return
+
     e.preventDefault();
     e.stopPropagation();
 
@@ -26,7 +29,7 @@ const useOnClick = () => {
 
     if (onElementClickRef.current) {
       onElementClickRef.current(
-        elements.find((element) => element.id === id),
+        element,
         {
           e,
           stop: onGridStop,

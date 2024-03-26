@@ -60,7 +60,7 @@ const createOrganizer: CreateOrganizeGridElements = ({ removeEmptySpaceBelow }) 
   );
 
   const pick = (element: GridElement) => {
-    if (element.disabled) {
+    if (element.disabled || element.disabledMove) {
       const collisions = hasAnyCollisions(map, element, measureElementHeight);
       if (!collisions.length) appendElementToMap(map, element, measureElementHeight, 0, 0);
       return;

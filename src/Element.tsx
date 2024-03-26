@@ -25,6 +25,7 @@ type ElementWrapperProps = {
   fullHeight?: boolean,
   opacity?: string,
   disabled?: boolean,
+  disabledMove?: boolean,
   paddingLeft?: number,
   gapHorizontal?: number,
   gapVertical?: number,
@@ -47,6 +48,7 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
   colWidth,
   opacity = '1',
   disabled,
+  disabledMove,
   paddingLeft = 0,
   gapHorizontal = 0,
   gapVertical = 0,
@@ -121,6 +123,7 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
       onContextMenu={disabled ? undefined : onContextMenu}
       onMouseUp={disabled ? undefined : onMouseUp}
       disabled={disabled}
+      disabledMove={disabledMove}
       draggableSelector={element.draggableSelector}
       resizable={element.resizable !== false}
       resizedMinWidth={isLengthAuto(colWidth) ? undefined : colWidth}
@@ -141,12 +144,12 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
 
 const propsToCompare = [
   'id', 'rowHeight', 'onAfterResize', 'onClick', 'onMouseUp', 'onContextMenu',
-  'colWidth', 'fullHeight', 'opacity', 'disabled', 'paddingLeft',
+  'colWidth', 'fullHeight', 'opacity', 'disabled', 'disabledMove', 'paddingLeft',
   'gapHorizontal', 'gapVertical', 'measureElementHeight', 'isShadow',
 ] as Array<keyof ElementWrapperProps>;
 
 const elementPropsToCompare = [
-  'id', 'family', 'fullHeight', 'x', 'y', 'w', 'h', 'render', 'resizable', 'disabled', 'draggableSelector',
+  'id', 'family', 'fullHeight', 'x', 'y', 'w', 'h', 'render', 'resizable', 'disabled', 'disabledMove', 'draggableSelector',
 ] as Array<keyof ElementWrapperProps['element']>;
 
 const areEqual = <T, >(a: T, b: T, keys: Array<keyof T>) => {
