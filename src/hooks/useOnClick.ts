@@ -14,8 +14,8 @@ const useOnClick = () => {
   const onClick: ElementProps['onClick'] = useCallback(({
     e, id, family, stop,
   }) => {
-    const element = elements.find((element) => element.id === id);
-    if (!element || element.disabled) return
+    const element = elements.find((item) => item.id === id);
+    if (!element || element.disabled) return;
 
     e.preventDefault();
     e.stopPropagation();
