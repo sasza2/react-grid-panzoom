@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.7.0
+
+### Minor Changes
+
+- 2566c3d: vertical helper lines
+
 ## 1.6.0
 
 ### Minor Changes
