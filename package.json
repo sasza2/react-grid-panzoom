@@ -74,7 +74,7 @@
     "vitest": "0.34.6"
   },
   "dependencies": {
-    "@sasza/react-panzoom": "1.15.0"
+    "@sasza/react-panzoom": "1.16.0"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
