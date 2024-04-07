@@ -59,6 +59,11 @@ const Styles = () => (
         background-color: #555;
         opacity: 0.5;
         height: 2px;
+        width: 2px;
+      }
+      .react-grid-panzoom-lines-container .react-grid-panzoom-line--top {
+        display: flex;
+        align-items: flex-end;
       }
       .react-grid-panzoom-lines-container .react-grid-panzoom-line--left {
         text-align: right;

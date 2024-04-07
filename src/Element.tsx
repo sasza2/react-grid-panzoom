@@ -133,7 +133,7 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
     >
       <div style={style} ref={onInit}>
         <div style={{ pointerEvents: 'none', height: fullHeight ? '100%' : undefined }}>
-          <LinesContainer />
+          <LinesContainer disabled={disabled} disabledMove={disabledMove} />
           {renderElement}
           <div className="react-grid-panzoom-element-selection" />
         </div>
