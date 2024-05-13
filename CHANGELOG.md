@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.8.1
+
+### Patch Changes
+
+- c473283: export organize elements options type
+
 ## 1.8.0
 
 ### Minor Changes
