@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.8.0
+
+### Minor Changes
+
+- 6ef429e: add margin bottom at elements as option when measuring elements height
+
 ## 1.7.0
 
 ### Minor Changes
