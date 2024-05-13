@@ -28,7 +28,10 @@ const useOrganizeElements = () => {
   const elementsRef = useRef<typeof elements>();
   elementsRef.current = elements;
 
-  const onOrganizeElements = useCallback((selectedElements: GridElement[] = [], options?: OrganizeElementsOptions): GridElement[] => {
+  const onOrganizeElements = useCallback((
+    selectedElements: GridElement[] = [],
+    options: OrganizeElementsOptions = {},
+  ): GridElement[] => {
     elementsHeightRef.current = {};
     const panZoomElementsRef = panZoomRef.current.getElements();
 
@@ -51,14 +54,14 @@ const useOrganizeElements = () => {
     });
 
     const internalMeasureElementHeight = (element: GridElement) => {
-      let height = measureElementHeight(element)
+      let height = measureElementHeight(element);
 
-      if (options?.marginBottomAtElements[element.id]) {
-        height += options?.marginBottomAtElements[element.id]
+      if (options && options.marginBottomAtElements && options.marginBottomAtElements[element.id]) {
+        height += options.marginBottomAtElements[element.id];
       }
 
-      return height
-    }
+      return height;
+    };
 
     const nextElements = organizeGridElements({
       startingElements: elementsRef.current,
@@ -77,7 +80,7 @@ const useOrganizeElements = () => {
 
     hasCollision.current = false;
 
-    return nextElements
+    return nextElements;
   }, [cols, colWidth, elements, gapHorizontal, gapVertical, paddingLeft, rows, rowHeight]);
 
   return onOrganizeElements;
