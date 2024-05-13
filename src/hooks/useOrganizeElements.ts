@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 
-import { GridElement } from 'types';
+import { GridElement, OrganizeElementsOptions } from 'types';
 import calculatePixelsByCellPosition from '@/helpers/calculatePixelsByCellPosition';
 import useMeasureElementHeight from './useMeasureElementHeight';
 import useCalculateCellPositionByPixels from './useCalculateCellPositionByPixels';
@@ -28,7 +28,7 @@ const useOrganizeElements = () => {
   const elementsRef = useRef<typeof elements>();
   elementsRef.current = elements;
 
-  const onOrganizeElements = useCallback((selectedElements: GridElement[] = []) => {
+  const onOrganizeElements = useCallback((selectedElements: GridElement[] = [], options?: OrganizeElementsOptions): GridElement[] => {
     elementsHeightRef.current = {};
     const panZoomElementsRef = panZoomRef.current.getElements();
 
@@ -50,22 +50,34 @@ const useOrganizeElements = () => {
       );
     });
 
+    const internalMeasureElementHeight = (element: GridElement) => {
+      let height = measureElementHeight(element)
+
+      if (options?.marginBottomAtElements[element.id]) {
+        height += options?.marginBottomAtElements[element.id]
+      }
+
+      return height
+    }
+
     const nextElements = organizeGridElements({
       startingElements: elementsRef.current,
       cols,
       rows,
-      measureElementHeight,
+      measureElementHeight: internalMeasureElementHeight,
       selectedElements,
     });
 
     if (nextElements.length !== elementsRef.current.length) {
       hasCollision.current = true;
-      return;
+      return elementsRef.current;
     }
 
     setElements(nextElements, { type: 'programmatic' });
 
     hasCollision.current = false;
+
+    return nextElements
   }, [cols, colWidth, elements, gapHorizontal, gapVertical, paddingLeft, rows, rowHeight]);
 
   return onOrganizeElements;
