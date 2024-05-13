@@ -10,7 +10,7 @@ const useMeasureElementHeight = () => {
   } = useGrid();
 
   const measureElementHeight = useCallback(
-    (element: GridElement) => {
+    (element: GridElement): number => {
       if (elementsHeightRef.current[element.id]) return elementsHeightRef.current[element.id];
       const height = measureElementHeightInit(
         panZoomRef,

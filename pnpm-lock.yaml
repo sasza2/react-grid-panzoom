@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@sasza/react-panzoom':
-    specifier: 1.16.0
-    version: 1.16.0(react@18.2.0)
+    specifier: 1.17.0
+    version: 1.17.0(react@18.2.0)
 
 devDependencies:
   '@changesets/cli':
@@ -1138,8 +1138,8 @@ packages:
     dev: true
     optional: true
 
-  /@sasza/react-panzoom@1.16.0(react@18.2.0):
-    resolution: {integrity: sha512-6lZ3jar32chBx3QCLqbjXbyeXAsf063cch4RgXvfkko2LnIKyBrEQhRaA2t+tBTE/mDkf/sPFrisbx8X2ISYeQ==}
+  /@sasza/react-panzoom@1.17.0(react@18.2.0):
+    resolution: {integrity: sha512-w05CPx9Cn/KrUs1oDOJEt+qka/SJ+CbC1Qsm4UFiSb1iRj3zT0yW0ZUcQy9RIneExa1RMvrH53Q2cYBnb8T9cQ==}
     peerDependencies:
       react: '>=16.14.0'
     dependencies:

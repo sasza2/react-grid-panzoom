@@ -27,6 +27,10 @@ export type Position = {
   y: Pixels,
 }
 
+export type OrganizeElementsOptions = {
+  marginBottomAtElements?: Record<string | number, number>,
+}
+
 export type GridAPI = {
   calculateCellPositionByPixels: (x: Pixels, y: Pixels) => Position;
   getPanZoom: () => PanZoomAPI,
@@ -34,7 +38,7 @@ export type GridAPI = {
   measureElementHeight: (elementId: string | number) => number | null;
   measureElementsHeight: () => Record<string | number, number>;
   getElementsPaddingBottom: () => Record<string | number, number>;
-  organizeElements: (selectedElements?: GridElement[]) => void,
+  organizeElements: (selectedElements?: GridElement[], options?: OrganizeElementsOptions) => GridElement[],
 }
 
 export type SetElements = (elements: GridElement[], { type }: { type: 'programmatic' | 'user' }) => void;
