@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.10.0
+
+### Minor Changes
+
+- b309279: api - get element bottom in pixels
+
 ## 1.9.0
 
 ### Minor Changes
