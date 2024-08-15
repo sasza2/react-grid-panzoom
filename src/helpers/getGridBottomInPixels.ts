@@ -1,7 +1,7 @@
 import { GridElement, MeasureElementHeight } from 'types';
 import { GRID_HEIGHT_MULTIPLIER_WHEN_AUTO, GRID_MIN_HEIGHT_WHEN_AUTO } from '@/consts';
-import getElementBottomInPixels from './getElementBottomInPixels';
 import { isLengthAuto } from './isLengthAuto';
+import getLowestElementBottomInPixels from './getLowestElementBottomInPixels';
 
 type GetGridBottomInPixels = (props: {
   elements: GridElement[],
@@ -20,22 +20,14 @@ const getGridBottomInPixels: GetGridBottomInPixels = ({
 }) => {
   if (!isLengthAuto(rows)) return rows * (rowHeight + gapVertical) - gapVertical;
 
-  let maxBottom = GRID_MIN_HEIGHT_WHEN_AUTO;
+  const lowestElementBottomInPixels = getLowestElementBottomInPixels({
+    elements,
+    gapVertical,
+    measureElementHeight,
+    rowHeight,
+  }) * GRID_HEIGHT_MULTIPLIER_WHEN_AUTO;
 
-  elements.forEach((element) => {
-    const currentBottom = getElementBottomInPixels({
-      element,
-      measureElementHeight,
-      rowHeight,
-      gapVertical,
-    }) * GRID_HEIGHT_MULTIPLIER_WHEN_AUTO;
-
-    if (currentBottom > maxBottom) {
-      maxBottom = currentBottom;
-    }
-  });
-
-  return maxBottom;
+  return Math.max(GRID_MIN_HEIGHT_WHEN_AUTO, lowestElementBottomInPixels);
 };
 
 export default getGridBottomInPixels;

@@ -33,6 +33,7 @@ export type OrganizeElementsOptions = {
 
 export type GridAPI = {
   calculateCellPositionByPixels: (x: Pixels, y: Pixels) => Position;
+  getLowestElementBottomInPixels: () => number,
   getPanZoom: () => PanZoomAPI,
   grabElement: (elementId: string | number, position?: Position) => void;
   measureElementHeight: (elementId: string | number) => number | null;

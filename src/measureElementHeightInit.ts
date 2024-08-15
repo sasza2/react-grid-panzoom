@@ -22,6 +22,7 @@ const measureElementHeightInit = (
   const { height } = node.getBoundingClientRect();
 
   const originalHeight = Math.round((height / zoom) * 10) / 10; // px
+
   return Math.ceil(originalHeight / rowHeight) || 1;
 };
 
