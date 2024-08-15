@@ -1,6 +1,7 @@
 import { useImperativeHandle } from 'react';
 
 import { Position } from 'types';
+import getLowestElementBottomInPixels from '@/helpers/getLowestElementBottomInPixels';
 import { useGrid } from './useGrid';
 import useGrabElement from './useGrabElement';
 import useMeasureElementHeight from './useMeasureElementHeight';
@@ -9,7 +10,7 @@ import useOrganizeElements from './useOrganizeElements';
 
 const useApi = () => {
   const {
-    elements, elementsNodes, forwardRef, panZoomRef,
+    elements, elementsNodes, forwardRef, gapVertical, panZoomRef, rowHeight,
   } = useGrid();
 
   const calculateCellPositionByPixels = useCalculateCellPositionByPixels();
@@ -21,6 +22,12 @@ const useApi = () => {
     forwardRef,
     () => ({
       calculateCellPositionByPixels,
+      getLowestElementBottomInPixels: () => getLowestElementBottomInPixels({
+        elements,
+        gapVertical,
+        measureElementHeight,
+        rowHeight,
+      }),
       getPanZoom: () => panZoomRef.current,
       grabElement: (id: string, position?: Position) => {
         panZoomRef.current.grabElement(id, position);
