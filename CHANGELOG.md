@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.10.1
+
+### Patch Changes
+
+- 3b712d3: fix setting zoom property in panzoom-core api
+
 ## 1.10.0
 
 ### Minor Changes
