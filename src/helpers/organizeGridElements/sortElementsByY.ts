@@ -1,8 +1,10 @@
 import { GridElement } from 'types';
 
+const getDisabledValue = (element: GridElement) => !!(element.disabled || element.disabledMove);
+
 export const sortElementsByY = (elements: GridElement[]) => elements.sort((a, b) => {
-  const isADisabled = a.disabled || a.disabledMove;
-  const isBDisabled = b.disabled || b.disabledMove;
+  const isADisabled = getDisabledValue(a);
+  const isBDisabled = getDisabledValue(b);
 
   if (isADisabled !== isBDisabled) {
     if (isADisabled) return -1;
