@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.10.2
+
+### Patch Changes
+
+- b330c18: fix organize elements in grid (sorting elements issue)
+
 ## 1.10.1
 
 ### Patch Changes
