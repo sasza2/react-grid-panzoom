@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.10.3
+
+### Patch Changes
+
+- 4faf5c9: update panzoom lib
+
 ## 1.10.2
 
 ### Patch Changes
