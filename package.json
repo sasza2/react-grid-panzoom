@@ -19,6 +19,9 @@
       "require": "./dist/main.umd.js"
     }
   },
+  "engines": {
+    "pnpm": "8.15.5"
+  },
   "types": "types/index.d.ts",
   "scripts": {
     "build": "tsc && vite build",
@@ -74,7 +77,7 @@
     "vitest": "0.34.6"
   },
   "dependencies": {
-    "@sasza/react-panzoom": "1.18.1"
+    "@sasza/react-panzoom": "1.18.2"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
