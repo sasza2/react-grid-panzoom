@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.10.4
+
+### Patch Changes
+
+- 4b88947: export types
+
 ## 1.10.3
 
 ### Patch Changes
