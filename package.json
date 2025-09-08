@@ -16,7 +16,8 @@
   "exports": {
     ".": {
       "import": "./dist/main.mjs",
-      "require": "./dist/main.umd.js"
+      "require": "./dist/main.umd.js",
+      "types": "./types/index.d.ts"
     }
   },
   "engines": {
