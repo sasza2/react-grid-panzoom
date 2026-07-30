@@ -49,12 +49,20 @@ const useOnAfterResize = () => {
       element.x = start.x;
       element.y = start.y;
 
-      const { width } = node.current.getBoundingClientRect();
+      const { width, height } = node.current.getBoundingClientRect();
 
-      const end = calculateCellPositionByPixels(position.x + width / zoom, position.y);
+      const end = calculateCellPositionByPixels(
+        position.x + width / zoom,
+        position.y + height / zoom,
+      );
 
       element.w = end.x - start.x;
       if (element.w < 1) element.w = 1;
+
+      if (!isLengthAuto(element.h)) {
+        element.h = end.y - start.y;
+        if (typeof element.h !== 'number' || element.h < 1) element.h = 1;
+      }
 
       return { ...element };
     });
@@ -67,6 +75,10 @@ const useOnAfterResize = () => {
       elementNode.current.style.width = isLengthAuto(colWidth)
         ? undefined
         : `${colWidth * element.w + gapHorizontal * (element.w - 1)}px`;
+
+      if (!isLengthAuto(element.h) && typeof element.h === 'number') {
+        elementNode.current.style.height = `${(rowHeight + gapVertical) * element.h - gapVertical}px`;
+      }
 
       panZoomRef.current.updateElementPositionSilent(id, calculatePixelsByCellPosition(element, {
         gapHorizontal, gapVertical, paddingLeft, colWidth, rowHeight,

@@ -10,6 +10,8 @@ export type IGridContext = {
   isMousePressed: boolean,
   panZoomRef: MutableRefObject<API>,
   currentElements: MutableRefObject<GridElement[]>,
+  dragActiveRef: MutableRefObject<boolean>,
+  flushElementsChangeRef: MutableRefObject<(() => void) | null>,
   selectedElements: GridElement[],
   setSelectedElements: (elements: GridElement[]) => void,
   elementRef: MutableRefObject<HTMLDivElement>,

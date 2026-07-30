@@ -16,6 +16,7 @@ import GridContext from './GridContext';
 import { useGrid } from './hooks/useGrid';
 import useOnElementMouseUp from './hooks/useOnElementMouseUp';
 import useOnElementsChange from './hooks/useOnElementsChange';
+import useDragSafetyNet from './hooks/useDragSafetyNet';
 import useMemoRef from './hooks/useMemoRef';
 import useOnContainerZoomChange from './hooks/useOnContainerZoomChange';
 import { useSortedElements } from './hooks/useSortedElements';
@@ -43,6 +44,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
     rowHeight,
     onContainerContextMenu,
     onContainerChange,
+    onContainerClick,
     onElementContextMenu,
     onElementStartResizing,
     paddingLeft,
@@ -76,6 +78,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
   const onElementMouseUpMemo = useMemoRef(onElementMouseUp);
 
   const onContainerContextMenuMemo = useMemoRef(onContainerContextMenu);
+  const onContainerClickMemo = useMemoRef(onContainerClick);
   const onElementContextMenuMemo = useMemoRef(onElementContextMenu);
   const onElementsChange = useOnElementsChange();
   const onContainerZoomChange = useOnContainerZoomChange();
@@ -83,6 +86,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
   const sortedElements = useSortedElements();
 
   useRefreshOrganizeElements();
+  useDragSafetyNet();
 
   const elementProps = {
     cols,
@@ -109,6 +113,7 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
         disabledMove={disabledMove}
         disabledZoom={disabledZoom}
         onContainerChange={onContainerChange}
+        onContainerClick={onContainerClickMemo}
         onContextMenu={onContainerContextMenuMemo}
         onContainerZoomChange={onContainerZoomChange}
         scrollSpeed={scrollSpeed}
@@ -161,6 +166,8 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
               onStartResizing={onElementStartResizingMemo}
               disabled={element.disabled}
               disabledMove={element.disabledMove}
+              disabledMoveHorizontal={element.disabledMoveHorizontal}
+              disabledMoveVertical={element.disabledMoveVertical}
               fullHeight={element.fullHeight}
               {...elementProps}
             />

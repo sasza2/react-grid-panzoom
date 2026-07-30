@@ -11,6 +11,10 @@ const useInternalWidth: UseInternalWidth = (width, gridRef) => {
   const [internalWidth, setInternalWidth] = useState<Pixels | 'auto'>(width || 'auto');
 
   useLayoutEffect(() => {
+    if (width) setInternalWidth(width);
+  }, [width]);
+
+  useLayoutEffect(() => {
     if (!gridRef.current || width) return;
 
     const onResize = () => {

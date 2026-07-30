@@ -26,6 +26,8 @@ type ElementWrapperProps = {
   opacity?: string,
   disabled?: boolean,
   disabledMove?: boolean,
+  disabledMoveHorizontal?: boolean,
+  disabledMoveVertical?: boolean,
   paddingLeft?: number,
   gapHorizontal?: number,
   gapVertical?: number,
@@ -49,6 +51,8 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
   opacity = '1',
   disabled,
   disabledMove,
+  disabledMoveHorizontal,
+  disabledMoveVertical,
   paddingLeft = 0,
   gapHorizontal = 0,
   gapVertical = 0,
@@ -115,6 +119,7 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
       id={id}
       className={isShadow ? 'react-panzoom-element-is-shadow' : undefined}
       family={element.family}
+      followers={element.followers}
       x={x}
       y={y}
       onStartResizing={onStartResizing}
@@ -124,9 +129,13 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
       onMouseUp={disabled ? undefined : onMouseUp}
       disabled={disabled}
       disabledMove={disabledMove}
+      disabledMoveHorizontal={disabledMoveHorizontal}
+      disabledMoveVertical={disabledMoveVertical}
       draggableSelector={element.draggableSelector}
       resizable={element.resizable !== false}
+      resizableVertical={element.resizableVertical === true}
       resizedMinWidth={isLengthAuto(colWidth) ? undefined : colWidth}
+      resizedMinHeight={rowHeight + gapVertical}
       resizerWidth={elementResizerWidth}
       width={isLengthAuto(colWidth) ? undefined : colWidth * w + gapHorizontal * (w - 1)}
       height={(rowHeight + gapVertical) * measureElementHeight(element) - gapVertical}
@@ -144,12 +153,12 @@ const ElementWrapper: React.FC<ElementWrapperProps> = ({
 
 const propsToCompare = [
   'id', 'rowHeight', 'onAfterResize', 'onClick', 'onMouseUp', 'onContextMenu',
-  'colWidth', 'fullHeight', 'opacity', 'disabled', 'disabledMove', 'paddingLeft',
+  'colWidth', 'fullHeight', 'opacity', 'disabled', 'disabledMove', 'disabledMoveHorizontal', 'disabledMoveVertical', 'paddingLeft',
   'gapHorizontal', 'gapVertical', 'measureElementHeight', 'isShadow',
 ] as Array<keyof ElementWrapperProps>;
 
 const elementPropsToCompare = [
-  'id', 'family', 'fullHeight', 'x', 'y', 'w', 'h', 'render', 'resizable', 'disabled', 'disabledMove', 'draggableSelector',
+  'id', 'family', 'followers', 'fullHeight', 'x', 'y', 'w', 'h', 'render', 'resizable', 'resizableVertical', 'disabled', 'disabledMove', 'disabledMoveHorizontal', 'disabledMoveVertical', 'draggableSelector',
 ] as Array<keyof ElementWrapperProps['element']>;
 
 const areEqual = <T, >(a: T, b: T, keys: Array<keyof T>) => {

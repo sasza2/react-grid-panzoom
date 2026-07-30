@@ -6,6 +6,7 @@ type RenderElement = (element?: GridElement) => JSX.Element
 export type GridElement = {
   id?: string | number,
   family?: string,
+  followers?: Array<string | number>,
   fullHeight?: boolean,
   x: number,
   y: number,
@@ -13,8 +14,11 @@ export type GridElement = {
   h?: number | 'auto',
   render: RenderElement,
   resizable?: boolean,
+  resizableVertical?: boolean,
   disabled?: boolean,
   disabledMove?: boolean,
+  disabledMoveHorizontal?: boolean,
+  disabledMoveVertical?: boolean,
   draggableSelector?: string,
 }
 
@@ -77,6 +81,7 @@ export type GridProps = PropsWithChildren<{
   gapHorizontal?: number,
   gapVertical?: number,
   onContainerChange?: PanZoomOptions['onContainerChange'],
+  onContainerClick?: PanZoomOptions['onContainerClick'],
   onContainerContextMenu?: PanZoomOptions['onContextMenu'],
   onElementStartResizing?: ElementOptions['onStartResizing'],
   onElementClick?: (element: GridElement, { e, stop }: { e: MouseEvent, stop: () => void }) => void,

@@ -10,8 +10,8 @@ const measureElementHeightInit = (
   elementNodes: Record<string | number, HTMLDivElement>,
   rowHeight: number,
 ): number => {
-  if (!panZoomRef.current) return 1;
   if (!isLengthAuto(element.h)) return element.h || 1;
+  if (!panZoomRef.current) return 1;
 
   const zoom = panZoomRef.current.getZoom();
   const node = elementNodes[element.id];

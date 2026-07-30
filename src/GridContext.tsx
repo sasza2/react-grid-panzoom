@@ -38,6 +38,8 @@ const GridProvider: React.FC<GridProviderProps> = ({
   const hasCollision = useRef<boolean>(false);
   const panZoomRef = useRef<API>();
   const currentElements = useRef<Array<GridElement>>([]);
+  const dragActiveRef = useRef<boolean>(false);
+  const flushElementsChangeRef = useRef<(() => void) | null>(null);
   const elementRef = useRef<HTMLDivElement>();
   const elementsNodes = useRef<Record<string | number, HTMLDivElement>>({});
   const elementsHeightRef = useRef<Record<string | number, number>>({});
@@ -72,6 +74,8 @@ const GridProvider: React.FC<GridProviderProps> = ({
     hasCollision,
     panZoomRef,
     currentElements,
+    dragActiveRef,
+    flushElementsChangeRef,
     selectedElements: selectedElementsWithoutRemoved,
     setSelectedElements,
     elementRef,

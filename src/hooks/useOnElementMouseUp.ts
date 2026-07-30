@@ -7,6 +7,8 @@ import useUpdateWithPanZoomApi from './useUpdateWithPanZoomApi';
 const useOnElementMouseUp = () => {
   const {
     currentElements,
+    dragActiveRef,
+    flushElementsChangeRef,
     elements,
     elementsHeightRef,
     elementRef,
@@ -21,6 +23,13 @@ const useOnElementMouseUp = () => {
   const onMouseUp: ElementProps['onMouseUp'] = useCallback(({ e }) => {
     e.preventDefault();
     e.stopPropagation();
+
+    // process any pending throttled move so a fast drag commits its final
+    // position instead of a stale one
+    if (flushElementsChangeRef.current) flushElementsChangeRef.current();
+
+    // a proper commit is happening — the safety net must not revert
+    dragActiveRef.current = false;
 
     if (hasCollision.current) {
       elements.forEach((element) => {
