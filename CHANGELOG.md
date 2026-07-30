@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.12.0
+
+### Minor Changes
+
+- da96040: fix: revert stuck drag position when drop is not committed properly
+
 ## 1.10.4
 
 ### Patch Changes
