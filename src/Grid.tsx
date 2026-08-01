@@ -45,6 +45,8 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
     onContainerContextMenu,
     onContainerChange,
     onContainerClick,
+    onContainerPressStart,
+    onContainerPressEnd,
     onElementContextMenu,
     onElementStartResizing,
     paddingLeft,
@@ -79,6 +81,8 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const onContainerContextMenuMemo = useMemoRef(onContainerContextMenu);
   const onContainerClickMemo = useMemoRef(onContainerClick);
+  const onContainerPressStartMemo = useMemoRef(onContainerPressStart);
+  const onContainerPressEndMemo = useMemoRef(onContainerPressEnd);
   const onElementContextMenuMemo = useMemoRef(onElementContextMenu);
   const onElementsChange = useOnElementsChange();
   const onContainerZoomChange = useOnContainerZoomChange();
@@ -114,6 +118,8 @@ const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
         disabledZoom={disabledZoom}
         onContainerChange={onContainerChange}
         onContainerClick={onContainerClickMemo}
+        onContainerPressStart={onContainerPressStartMemo}
+        onContainerPressEnd={onContainerPressEndMemo}
         onContextMenu={onContainerContextMenuMemo}
         onContainerZoomChange={onContainerZoomChange}
         scrollSpeed={scrollSpeed}

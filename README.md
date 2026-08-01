@@ -4,7 +4,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/react-grid-panzoom.svg)](https://www.npmjs.com/package/react-grid-panzoom)
 [![license](https://img.shields.io/npm/l/react-grid-panzoom.svg)](./LICENSE)
 
-A React grid layout with built-in pan and zoom, drag-and-drop, and resizing. Think of it as a canvas-style grid — position elements on rows/columns, then let users pan, zoom, drag, and resize them.
+A React grid layout with built-in pan and zoom, drag-and-drop, and resizing. Think of it as a canvas-style grid - position elements on rows/columns, then let users pan, zoom, drag, and resize them.
 
 !["Preview"](https://raw.githubusercontent.com/sasza2/react-grid-panzoom/master/docs/preview.gif "Example preview")
 
@@ -67,9 +67,11 @@ const Example = () => {
 | `elementResizerWidth` | `number` | `15` | Width (in pixels) of the resizer handle on resizable elements. |
 | `gapHorizontal` | `number` | | Horizontal gap between columns. |
 | `gapVertical` | `number` | | Vertical gap between rows. |
-| `helpLines` | `boolean` | `false` | Display grid guide lines — useful with multiple columns/rows. |
+| `helpLines` | `boolean` | `false` | Display grid guide lines - useful with multiple columns/rows. |
 | `onContainerChange` | `func` | | Called when the grid is moved or zoomed. |
-| `onContainerClick` | `func` | | Called when the grid container is clicked. |
+| `onContainerClick` | `func` | | Called when the grid container is clicked (fires on mousedown/touchstart, same as `onContainerPressStart`). |
+| `onContainerPressStart` | `func` | | Called when the mouse/touch is pressed down on the grid container. |
+| `onContainerPressEnd` | `func` | | Called when the mouse/touch is released after being pressed on the grid container. |
 | `onContainerContextMenu` | `func` | | Called when the grid container's context menu is opened. |
 | `onElementClick` | `func` | | Called when an element is clicked: `(element, { e, stop }) => void`. |
 | `onElementContextMenu` | `func` | | Called when an element's context menu is opened (right click). |
@@ -82,7 +84,7 @@ const Example = () => {
 | `rowHeight` | `number` | | Height of each row. |
 | `rows` | `number \| 'auto'` | | Number of rows in the grid. Use `'auto'` to let the grid expand automatically. |
 | `scrollSpeed` | `number` | | Scroll speed multiplier. |
-| `setElements` | `func` | | `(elements, { type }) => void` — called to update elements in the grid. `type` is `'programmatic'` or `'user'` depending on the source of the change. |
+| `setElements` | `func` | | `(elements, { type }) => void` - called to update elements in the grid. `type` is `'programmatic'` or `'user'` depending on the source of the change. |
 | `width` | `number` | | Grid width. |
 | `zoomInitial` | `number` | | Initial zoom level. |
 | `zoomMax` | `number` | | Maximum zoom level. |
