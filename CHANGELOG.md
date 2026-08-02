@@ -1,5 +1,11 @@
 # react-grid-panzoom
 
+## 1.14.0
+
+### Minor Changes
+
+- 363dd29: feat: onContainerPressStart/onContainerPressEnd props
+
 ## 1.12.0
 
 ### Minor Changes
