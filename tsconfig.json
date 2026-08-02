@@ -17,5 +17,13 @@
     "rootDirs": ["src", "types"],
     "skipLibCheck": true,
     "target": "es5"
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test",
+    "src/stories",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
+  ]
 }

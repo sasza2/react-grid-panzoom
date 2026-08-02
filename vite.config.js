@@ -16,6 +16,18 @@ export default defineConfig({
     setupFiles: './test.setup.js',
     coverage: {
       provider: 'v8',
+      all: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: [
+        'src/stories/**',
+        'src/**/*.test.{ts,tsx}',
+        'src/**/types.ts',
+      ],
+      reporter: ['text', 'html'],
+      lines: 100,
+      functions: 100,
+      branches: 100,
+      statements: 100,
     },
   },
   build: {
